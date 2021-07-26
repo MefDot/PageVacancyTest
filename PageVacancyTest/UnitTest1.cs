@@ -17,7 +17,8 @@ namespace PageVacancyTest
         private By _selectLanguage = By.XPath("/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div/div[3]/div/div");
         private By _checkboxEnglish = By.XPath("/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div/div[3]/div/div/div/div[2]");
 
-        private By _vacancyCard = By.ClassName("card");
+        private By _vacancyCard = By.ClassName("card-sm");
+
 
         // Параметр количества вакансий 
         private int _vacancyCount = 6; 
@@ -37,6 +38,7 @@ namespace PageVacancyTest
         [Test]
         public void Test1()
         {
+            
             var departament = driver.FindElement(_selectAllDepartament);
             departament.Click();
 
@@ -51,7 +53,7 @@ namespace PageVacancyTest
 
             var VacancyCard = driver.FindElements(_vacancyCard);
 
-            Assert.AreEqual(_vacancyCount, VacancyCard.Count - 1);
+            Assert.AreEqual(_vacancyCount, VacancyCard.Count);
 
 
         }
